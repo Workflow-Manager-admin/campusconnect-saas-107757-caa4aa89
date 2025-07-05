@@ -28,9 +28,13 @@ urlpatterns = [
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="My API",
+      title="CampusConnect SaaS API",
       default_version='v1',
-      description="Test description",
+      description="Comprehensive API for campus recruitment management system. "
+                 "Provides endpoints for authentication, user management, job postings, "
+                 "applications, placement rounds, notifications, analytics, and admin functions.",
+      contact=openapi.Contact(email="admin@campusconnect.com"),
+      license=openapi.License(name="MIT License"),
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
@@ -51,9 +55,13 @@ def dynamic_schema_view(request, *args, **kwargs):
     url = get_full_url(request)
     view = get_schema_view(
         openapi.Info(
-            title="My API",
+            title="CampusConnect SaaS API",
             default_version='v1',
-            description="API Docs",
+            description="Comprehensive API for campus recruitment management system. "
+                       "Provides endpoints for authentication, user management, job postings, "
+                       "applications, placement rounds, notifications, analytics, and admin functions.",
+            contact=openapi.Contact(email="admin@campusconnect.com"),
+            license=openapi.License(name="MIT License"),
         ),
         public=True,
         url=url,

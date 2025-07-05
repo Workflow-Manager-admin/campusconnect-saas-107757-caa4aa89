@@ -102,6 +102,11 @@ class User(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} ({self.email})"
+    
+    def check_password(self, raw_password):
+        """Check if the provided password matches the stored password hash."""
+        from django.contrib.auth.hashers import check_password
+        return check_password(raw_password, self.password_hash)
 
 
 # PUBLIC_INTERFACE
